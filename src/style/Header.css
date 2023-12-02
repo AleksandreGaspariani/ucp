@@ -1,0 +1,10 @@
+
+#test {
+    flex-direction: row;
+    padding: 8px 24px;
+    background-image: url('../../imgs/bg-header.jpg');
+    background-position: 20%;
+    background-size: cover;
+    height: 15vh;
+    color: white;
+}
