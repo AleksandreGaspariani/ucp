@@ -3,11 +3,15 @@ import React from "react";
 import Container from './component/Container';
 import Header from './component/Header';
 
+import PropertyRequest from "./pages/Property/PropertyRequest";
+import HouseRequest from "./pages/Property/HouseRequest";
+
 import {
   BrowserRouter,
   Routes,
   Route,
 } from 'react-router-dom';
+import Page404 from "./component/Page404";
 
 function App() {
   return (
@@ -21,7 +25,7 @@ function App() {
       <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 
       <BrowserRouter>
-        <Header name='LS-RP UCP'/>
+        <Header name='LS:RP UCP'/>
         <Routes>
           <Route path="/" element={<Container />}>
             {/* <Route path='/' element={<Dash/>} /> */}
@@ -29,12 +33,21 @@ function App() {
                 {/* <Route path='us' element={<Us/>} /> */}
             {/* </Route> */}
             {/* <Route path='/about-us' element={<Us/>} /> */}
-            <Route path='/test' element={'test'} />
-            <Route path='/test-two' element={'test-two'} />
-            <Route path='/test-three' element={'test-three'} />
-            <Route path='/profile' element={'profile'}>
-
+            <Route path='/home' element={'home'} />
+            <Route path='/characters' element={'characters'} />
+            <Route path='/illegal-request-panel' element={'ilegal things'} />
+            <Route path='/xmr-list' element={'xmr lists'}/>
+            <Route path='/chatlogs' element={'chatlogs'}/>
+            <Route path='/property-requests' element={<PropertyRequest />} />
+            {/* <Route path='/refund-requests/*' element={'refund'}>
+              <Route path='/refund-list' element={'refund list'} />
             </Route>
+            <Route path='/affiliate-program' element={'affiliate program'} />
+            <Route path='/apply-for-staff/*' element={'apply for staff'}>
+              <Route path="/admin" element={'admin'}/>
+              <Route path="/supporter" element={'admin'}/>
+            </Route> */}
+            <Route path="*" element={<Page404 />} />
           </Route>
 
         </Routes>

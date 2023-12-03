@@ -1,0 +1,40 @@
+{
+    "links": [
+        {
+            "id": 0,
+            "link": "home",
+            "name": "Home",
+            "symbol": "home"
+        },
+        {
+            "id": 1,
+            "link": "characters",
+            "name": "Characters",
+            "symbol": "person"
+        },
+        {
+            "id": 2,
+            "link": "illegal-request-panel",
+            "name": "Illegal Requests Panel",
+            "symbol": "domino_mask"
+        },
+        {
+            "id": 3,
+            "link": "xmr-list",
+            "name": "XMR List",
+            "symbol": "infrared"
+        },
+        {
+            "id": 4,
+            "link": "chatlogs",
+            "name": "Chatlogs",
+            "symbol": "forum"
+        },
+        {
+            "id": 5,
+            "link": "property-requests",
+            "name": "Property Requests",
+            "symbol": "apartment"
+        }
+    ]
+  }
