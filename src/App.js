@@ -13,6 +13,7 @@ import {
 } from 'react-router-dom';
 import Page404 from "./component/Page404";
 
+
 function App() {
   return (
     <div className="App">
@@ -27,7 +28,10 @@ function App() {
       <BrowserRouter>
         <Header name='LS:RP UCP'/>
         <Routes>
-          <Route path="/" element={<Container />}>
+        // TODO: do something with this bunch of the routes
+        // FIXME: fix it
+        // BUG: there is a bug
+          <Route path="/" element={<Container />}> 
             {/* <Route path='/' element={<Dash/>} /> */}
             {/* <Route path="/about/*" element={<About />}> */}
                 {/* <Route path='us' element={<Us/>} /> */}
