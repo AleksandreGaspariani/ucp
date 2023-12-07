@@ -6,15 +6,23 @@ import Header from './component/Header';
 import PropertyRequest from "./pages/Property/PropertyRequest";
 import HouseRequest from "./pages/Property/HouseRequest";
 
+import Login from "./pages/User/Login";
+
 import {
   BrowserRouter,
   Routes,
   Route,
 } from 'react-router-dom';
 import Page404 from "./component/Page404";
+import { useDispatch, useSelector } from "react-redux";
+import { login, logout } from "./redux/userReducer";
 
 
 function App() {
+
+  const { loggedIn } = useSelector((state) => state.logged);
+  const dispatch = useDispatch();
+
   return (
     <div className="App">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
@@ -31,7 +39,8 @@ function App() {
         // TODO: do something with this bunch of the routes
         // FIXME: fix it
         // BUG: there is a bug
-          <Route path="/" element={<Container />}> 
+        <Route path="/" element={ <Container />} >
+          {/* <Route path="/" element={<Container />}>  */}
             {/* <Route path='/' element={<Dash/>} /> */}
             {/* <Route path="/about/*" element={<About />}> */}
                 {/* <Route path='us' element={<Us/>} /> */}

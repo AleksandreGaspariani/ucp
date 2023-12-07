@@ -13,7 +13,7 @@ const Container = () => {
         return res.json()
       })
       .then(data => {
-        console.log(data);
+        // console.log(data);
         setLinks(data);
       })
   }, [])
@@ -37,6 +37,11 @@ const Container = () => {
   //     }
   //   ];
 
+  /* TODO: if user is not logged in hide header profile button and show login, register only. 
+    also, change view for container if user isn't logged in , I mean show login view  or register view, which
+    was requested by user , after that all collect data by logging in , as user name , age 
+    it will be better if u build small backend api on laravel which will log u in and out, or will register u
+  */
   return (
     <div style={{backgroundColor: 'white', height: '85vh'}} className={'d-flex'}>
         {links && <Sidebar mass={links}/>}
