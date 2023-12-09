@@ -15,7 +15,7 @@ const HouseRequest = () => {
       <h2>House Request</h2>
       { loggedIn ? 'Logged in' : 'Not Logged'}
 
-      <button onClick={() => dispatch(login())}>login</button>
+      <button onClick={() => dispatch(login('test'))}>login</button>
       <button onClick={() => dispatch(logout())}>logout</button>
     </div>
   )

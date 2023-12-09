@@ -2,8 +2,14 @@
 import React from 'react'
 import Sidebar from './Sidebar'
 import Mainbar from './Mainbar'
+import { useDispatch, useSelector } from 'react-redux';
+import Authentication from '../pages/User/Authentication'
+import { redirect } from 'react-router-dom';
 
 const Container = () => {
+  
+  const { loggedIn } = useSelector((state) => state.logged);
+  const dispatch = useDispatch();
 
   const [links, setLinks] = React.useState(null);
 
@@ -16,26 +22,8 @@ const Container = () => {
         // console.log(data);
         setLinks(data);
       })
-  }, [])
+  }, []);
 
-  // let data = [
-  //     {
-  //       id: 0,
-  //       link: 'test',
-  //       name: 'Test',
-  //       symbol: 'home'
-  //     },{
-  //       id: 1,
-  //       link: 'test-two',
-  //       name: 'Test Seconde',
-  //       symbol: 'person'
-  //     },{
-  //       id: 2,
-  //       link: 'test-three',
-  //       name: 'Test third one',
-  //       symbol: 'settings'
-  //     }
-  //   ];
 
   /* TODO: if user is not logged in hide header profile button and show login, register only. 
     also, change view for container if user isn't logged in , I mean show login view  or register view, which
@@ -44,7 +32,7 @@ const Container = () => {
   */
   return (
     <div style={{backgroundColor: 'white', height: '85vh'}} className={'d-flex'}>
-        {links && <Sidebar mass={links}/>}
+        { loggedIn ? links && <Sidebar mass={links}/> : '' }
         <Mainbar />
     </div>
   )
