@@ -1,8 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Link } from 'react-router-dom'
 
 const Login = () => {
+
+  const [login , setLogin] = useState('');
+  const [password , setPassword] = useState('');
+  
+
+  const submitForm = (event) => {
+    
+  }
+
+  const handleLogin = (e) => {
+    setLogin(e.target.value);
+  }
+
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  }
+
+  const test = () => {
+    console.log(login, password);
+  }
+  
+  
+
   return (
     <div className='w-100' style={{overflow: 'hidden'}}>
       <div className="d-flex flex-column  justify-content-start align-items-center pt-5 shadow-md" style={{minHeight: '100vh',backgroundColor: 'rgb(229, 229, 229)', width: '100%'}}>
@@ -10,20 +33,19 @@ const Login = () => {
           <h3 className="bold mt-3">Sign in</h3>
           <p className="bold">Continue to ls-rp.ge</p>
           <hr />
-          <form action="" method="login" className="w-100">
+          <div className="w-100">
               <div className="d-flex flex-column w-100">
-                  <input type="text" className="form-control w-100 px-3 mb-3 py-2" placeholder="Email or username" name="username" />
-                  <input type="password" className="form-control w-100 px-3 py-2 mt-3" placeholder="Password" name="password" />
-                  <a href="user/forgot-password/{id}" style={{textDecoration: 'none',fontWeight: '500'}} className="p-0 m-0 ps-1">Forgot password?</a>
+                  <input type="text" className="form-control w-100 px-3 mb-3 py-2" placeholder="Email or username" name="username" id='login' onChange={handleLogin}/>
+                  <input type="password" className="form-control w-100 px-3 py-2 mt-3" placeholder="Password" name="password" id='password' onChange={handlePassword}/>
+                  <a href="#" style={{textDecoration: 'none',fontWeight: '500'}} className="p-0 m-0 ps-1" aria-disabled>Forgot password?</a>
               </div>
-              
+              <button className='btn' onClick={test}>Click</button>
               <div className="d-flex justify-content-between align-items-center flex-row mt-4">
                   {/* <a href="/register" style={{textDecoration: 'none',fontWeight: '500'}}>Create Account</a> */}
                   <Link to={'/register'} style={{textDecoration: 'none', textAlign: 'left', fontWeight: '500'}}>Create Account</Link>
-                  <img src="/textPNG.png" alt="" height="40px" />
-                  <input type="submit" value="Sign In" className="btn btn-outline-dark" />
+                  <input type="submit" value="Sign In" className="btn btn-outline-dark" onClick={submitForm}/>
               </div>
-          </form>
+          </div>
 
         </div>
         <div className="d-flex justify-content-evenly mt-3 w-sm-100" style={{width: '40%'}}>
