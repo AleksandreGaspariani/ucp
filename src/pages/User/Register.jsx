@@ -62,15 +62,10 @@ const Register = () => {
       console.log(data);
     })
   };
-    
-
-  const test = () => {
-    console.log(username, email, password);
-  };
 
   return (
-    <div className='w-100' style={{overflow: 'hidden'}}>
-      <div className="d-flex flex-column  justify-content-start align-items-center pt-5 shadow-md" style={{minHeight: '100vh',backgroundColor: 'rgb(229, 229, 229)', width: '100%'}}>
+    <div className='w-100'>
+      <div className="d-flex flex-column  justify-content-start align-items-center pt-5 shadow-md" style={{minHeight: '85vh',backgroundColor: 'rgb(229, 229, 229)', width: '100%', overflow: 'hidden'}}>
         <div className="d-flex flex-column justify-content-center align-items-center mt-1 px-5 py-2 bg-light rounded shadow-lg" style={{width: '40%'}}>
           <h3 className="bold mt-3">Sign in</h3>
           <p className="bold">Continue to ls-rp.ge</p>
@@ -81,7 +76,6 @@ const Register = () => {
                   <input type="password" className="form-control w-100 px-3 py-1 mt-3" placeholder="Password" name="password" id='password' onChange={handlePassword}/>
                   <a href="#" style={{textDecoration: 'none',fontWeight: '500'}} className="p-0 m-0 ps-1" aria-disabled>Forgot password?</a>
               </div>
-              <button className='btn' onClick={test}>Click</button>
               <div className="d-flex justify-content-between align-items-center flex-row mt-4">
                   {/* <a href="/register" style={{textDecoration: 'none',fontWeight: '500'}}>Create Account</a> */}
                   <Link to={'/register'} style={{textDecoration: 'none', textAlign: 'left', fontWeight: '500'}}>Create Account</Link>

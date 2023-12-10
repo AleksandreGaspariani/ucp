@@ -4,6 +4,7 @@ import {Link, redirect} from 'react-router-dom'
 import { useDispatch as UseDispatch, useSelector as UseSelector } from 'react-redux';
 import { login, logout, stage } from '../redux/userReducer';
 import '../style/Header.css';
+import { show , hide} from '../redux/globalReducer';
 
 const header = (props) => {
   
@@ -17,6 +18,7 @@ const header = (props) => {
   }
 
   const logout = () => {
+    dispatch(show())
     let token = localStorage.getItem('token');
     console.log(localStorage.getItem('token'));
     fetch('http://127.0.0.1:8000/api/logout', {
@@ -43,6 +45,7 @@ const header = (props) => {
         console.log('success');
       }
       localStorage.clear();
+      dispatch(hide())
       window.location.replace('http://localhost:3000');
     })
     

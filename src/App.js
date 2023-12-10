@@ -16,14 +16,18 @@ import {
 import Page404 from "./component/Page404";
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout, stage, user } from "./redux/userReducer";
+import { loading } from "./redux/globalReducer"
 import Register from "./pages/User/Register";
 import AuthorisedRoutes from "./component/routes/AuthorisedRoutes";
 import NotAuthorisedRoutes from "./component/routes/NotAuthorisedRoutes";
+import Loading from "./component/Loading";
 
 
 function App() {
 
   const { loggedIn } = useSelector((state) => state.logged);
+  const { loading } = useSelector((state) => state.global);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -51,8 +55,8 @@ function App() {
       <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 
       <BrowserRouter>
+        { loading ? <Loading /> : '' }
         <Header name='LS:RP UCP'/>
-        
         {/* Routes */}
         { loggedIn ? <AuthorisedRoutes /> : <NotAuthorisedRoutes /> }
 

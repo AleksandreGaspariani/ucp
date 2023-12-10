@@ -3,17 +3,19 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { Link } from 'react-router-dom'
 import { login, logout, stage, register, user } from '../../redux/userReducer';
+import { show, hide } from '../../redux/globalReducer';
 
 const Login = () => {
 
   const [email , setEmail] = useState('');
   const [password , setPassword] = useState('');
-  const [user, setUser] = useState();
   const [message, setMessage ] = useState('');
   
+  // const { loading } = useSelector((state) => state.global)
   const dispatch = useDispatch();
 
   const submitForm = () => {
+    dispatch(show())
     fetch("http://127.0.0.1:8000/api/login", {
       method: "POST",
       body: JSON.stringify({
@@ -45,7 +47,8 @@ const Login = () => {
       if (data['message']) {
         setMessage(data['message']);
       }
-      console.log(data);
+      dispatch(hide());
+
     });
   }
 
@@ -57,15 +60,12 @@ const Login = () => {
     setPassword(e.target.value)
   }
 
-  const test = () => {
-    console.log(login, password);
-  }
   
   
 
   return (
     <div className='w-100' style={{overflow: 'hidden'}}>
-      <div className="d-flex flex-column  justify-content-start align-items-center pt-5 shadow-md" style={{minHeight: '100vh',backgroundColor: 'rgb(229, 229, 229)', width: '100%'}}>
+      <div className="d-flex flex-column  justify-content-start align-items-center pt-5 shadow-md" style={{minHeight: '85vh',backgroundColor: 'rgb(229, 229, 229)', width: '100%'}}>
         <div className="d-flex flex-column justify-content-center align-items-center mt-1 px-5 py-2 bg-light rounded shadow-lg" style={{width: '40%'}}>
           <h3 className="bold mt-3">Sign in</h3>
           <p className="bold">Continue to ls-rp.ge</p>

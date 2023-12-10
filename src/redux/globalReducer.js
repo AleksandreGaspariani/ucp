@@ -3,16 +3,19 @@ import { createSlice } from "@reduxjs/toolkit";
 export const globalSlice = createSlice({
     name: 'global',
     initialState: { 
-        loading: false,
+        loading: 0,
     },
     reducers: { 
-        loading: (state) => {
-            state.loading = !state.loading;
+        show: (state) => {
+            state.loading = true;
+        },
+        hide: (state) => {
+            state.loading = false;
         }
     }
 })
 
-export const { } = globalSlice.actions;
+export const { show, hide } = globalSlice.actions;
 
 
 export default globalSlice.reducer;
