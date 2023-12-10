@@ -19,6 +19,7 @@ const AuthorisedRoutes = () => {
                 {/* <Route path='us' element={<Us/>} /> */}
             {/* </Route> */}
             {/* <Route path='/about-us' element={<Us/>} /> */}
+            <Route path='/login' element={<h1 className={"text-success w-100 vh-100 d-flex justify-content-center align-items-center"}>You logged in successfully</h1>} />
             <Route path='/home' element={'home'} />
             <Route path='/characters' element={'characters'} />
             <Route path='/illegal-request-panel' element={'ilegal things'} />

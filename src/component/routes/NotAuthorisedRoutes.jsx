@@ -11,15 +11,15 @@ import NotAuthorized from '../NotAuthorized';
 
 const NotAuthorisedRoutes = () => {
   return (
-    <>
+    <div>
     <Routes>
-        <Route path="/" element={ <Container />} >
-            <Route path="/login" element={ <Login /> } />
-            <Route path="/register" element={ <Register /> } />
-            <Route path="*" element={<NotAuthorized />} />
-        </Route>
+        <Route path="/" element={ <Container />} />
+          <Route path="/login" element={ <Login /> } />
+          <Route path="/register" element={ <Register /> } />
+          <Route path="*" element={<NotAuthorized />} />
+        {/* </Route> */}
     </Routes>
-    </>
+    </div>
   )
 }
 

@@ -5,8 +5,10 @@ import Login from '../pages/User/Login'
 
 const Mainbar = () => {
 
-  const { loggingStage } = useSelector((state) => state.logged)
+  const { loggingStage, loggedIn } = useSelector((state) => state.logged)
 
+  // BUG: login page was duplicating after I restart browser at route /login
+  
   return (
     <div className={'w-100 d-flex flex-column'}>
       { loggingStage === 0 ? <Login /> : '' }

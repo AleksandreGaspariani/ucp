@@ -13,7 +13,13 @@ const Container = () => {
 
   const [links, setLinks] = React.useState(null);
 
+
+  if ( !loggedIn ) {
+    window.location.replace('http://localhost:3000/login');
+  }
+
   React.useEffect(() => {
+
     fetch('http://localhost:8000/links')
       .then(res => {
         return res.json()

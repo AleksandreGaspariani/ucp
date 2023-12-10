@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Container from './component/Container';
 import Header from './component/Header';
@@ -15,7 +15,7 @@ import {
 } from 'react-router-dom';
 import Page404 from "./component/Page404";
 import { useDispatch, useSelector } from "react-redux";
-import { login, logout } from "./redux/userReducer";
+import { login, logout, stage, user } from "./redux/userReducer";
 import Register from "./pages/User/Register";
 import AuthorisedRoutes from "./component/routes/AuthorisedRoutes";
 import NotAuthorisedRoutes from "./component/routes/NotAuthorisedRoutes";
@@ -26,7 +26,21 @@ function App() {
   const { loggedIn } = useSelector((state) => state.logged);
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("user");
+    if (loggedInUser) {
+      const foundUser = JSON.parse(loggedInUser);
+
+      dispatch(stage(2));
+      dispatch(login(foundUser['token']));
+      dispatch(user(foundUser));
+    }
+  })
+
+
+  // TODO: change sidebar link principes by manually adding, cuz some of them have to be under his parrent btns
   return (
+
     <div className="App">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
