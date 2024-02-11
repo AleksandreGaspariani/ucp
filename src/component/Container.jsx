@@ -2,14 +2,12 @@
 import React from 'react'
 import Sidebar from './Sidebar'
 import Mainbar from './Mainbar'
-import { useDispatch, useSelector } from 'react-redux';
-import Authentication from '../pages/User/Authentication'
-import { redirect } from 'react-router-dom';
+import { useSelector } from 'react-redux'; //useDispatch
 
 const Container = () => {
   
   const { loggedIn } = useSelector((state) => state.logged);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const [links, setLinks] = React.useState(null);
 

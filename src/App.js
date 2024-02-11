@@ -1,23 +1,11 @@
 import React, { useEffect } from "react";
-
-import Container from './component/Container';
 import Header from './component/Header';
-
-import PropertyRequest from "./pages/Property/PropertyRequest";
-import HouseRequest from "./pages/Property/HouseRequest";
-
-import Login from "./pages/User/Authentication";
 
 import {
   BrowserRouter,
-  Routes,
-  Route,
 } from 'react-router-dom';
-import Page404 from "./component/Page404";
 import { useDispatch, useSelector } from "react-redux";
-import { login, logout, stage, user } from "./redux/userReducer";
-import { loading } from "./redux/globalReducer"
-import Register from "./pages/User/Register";
+import { login, stage, user } from "./redux/userReducer";
 import AuthorisedRoutes from "./component/routes/AuthorisedRoutes";
 import NotAuthorisedRoutes from "./component/routes/NotAuthorisedRoutes";
 import Loading from "./component/Loading";

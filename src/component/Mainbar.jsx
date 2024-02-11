@@ -5,7 +5,7 @@ import Login from '../pages/User/Login'
 
 const Mainbar = () => {
 
-  const { loggingStage, loggedIn } = useSelector((state) => state.logged)
+  const { loggingStage } = useSelector((state) => state.logged) // loggedIn
 
   // BUG: login page was duplicating after I restart browser at route /login
   

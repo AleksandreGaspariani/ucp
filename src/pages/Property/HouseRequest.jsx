@@ -1,14 +1,13 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { login, logout } from '../../redux/userReducer';
+// import { useDispatch, useSelector } from 'react-redux'
 
-// import { Link, useNavigate } from 'react-router-dom'
 
 const HouseRequest = () => {
 
     // const navigate = useNavigate();
-    const { user } = useSelector((state) => state.logged);
-    const dispatch = useDispatch();
+
+    // const { user } = useSelector((state) => state.logged);
+    // const dispatch = useDispatch();
 
   return (
     <div className='w-100 h-100 border rounded-3 d-flex justify-content-start px-3 py-5' id='property-content'>

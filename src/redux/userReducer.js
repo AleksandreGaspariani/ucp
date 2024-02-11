@@ -18,7 +18,7 @@ export const loggedSlice = createSlice({
             state.loggingStage = 2;
         },
         register: (state, action) => {
-
+            
         },
         logout: (state) => {
             state.loggedIn = false;

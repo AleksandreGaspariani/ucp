@@ -1,8 +1,8 @@
 
 
-import {Link, redirect} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import { useDispatch as UseDispatch, useSelector as UseSelector } from 'react-redux';
-import { login, logout, stage } from '../redux/userReducer';
+import { stage } from '../redux/userReducer';
 import '../style/Header.css';
 import { show , hide} from '../redux/globalReducer';
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux'; //useSelector
 import { Link } from 'react-router-dom';
 import { login, stage } from '../../redux/userReducer';
 
@@ -59,7 +59,7 @@ const Register = () => {
       if (data['message']) {
         setMessage(data['message']);
       }
-      console.log(data);
+      console.log(message);
     })
   };
 
@@ -74,7 +74,7 @@ const Register = () => {
                   <input type="text" className="form-control w-100 px-3 mb-1 py-1" placeholder="Username" name="username" id='username' onChange={handleUsername}/>
                   <input type="email" className="form-control w-100 px-3 mb-1 py-1 mt-3" placeholder="Email" name="email" id='email' onChange={handleEmail}/>
                   <input type="password" className="form-control w-100 px-3 py-1 mt-3" placeholder="Password" name="password" id='password' onChange={handlePassword}/>
-                  <a href="#" style={{textDecoration: 'none',fontWeight: '500'}} className="p-0 m-0 ps-1" aria-disabled>Forgot password?</a>
+                  <a href={"#"} style={{textDecoration: 'none',fontWeight: '500'}} className="p-0 m-0 ps-1" aria-disabled>Forgot password?</a>
               </div>
               <div className="d-flex justify-content-between align-items-center flex-row mt-4">
                   {/* <a href="/register" style={{textDecoration: 'none',fontWeight: '500'}}>Create Account</a> */}
@@ -85,15 +85,15 @@ const Register = () => {
 
         </div>
         <div className="d-flex justify-content-evenly mt-3 w-sm-100" style={{width: '40%'}}>
-            <a href="https://discord.gg/uDdbbgv74u" className="d-flex align-items-center w-auto" style={{textDecoration: 'none'}}>
+            <a href={"https://discord.gg/uDdbbgv74u"} className="d-flex align-items-center w-auto" style={{textDecoration: 'none'}}>
                 <img src="/discord.png" alt="" width="20px" />
                 <small className="ms-2">Discord</small>
             </a>
-            <a href="https://ls-rp.ge" className="d-flex align-items-center w-auto" style={{textDecoration: 'none'}}>
+            <a href={"https://ls-rp.ge"} className="d-flex align-items-center w-auto" style={{textDecoration: 'none'}}>
                 <span className="material-symbols-outlined" style={{fontSize: '20px'}}>share_windows</span>
                 <small className="ms-2">Forum</small>
             </a>
-            <a href="#map" className="d-flex align-items-center w-auto" style={{textDecoration: 'none'}}>
+            <a href={"#map"} className="d-flex align-items-center w-auto" style={{textDecoration: 'none'}}>
                 <span className="material-symbols-outlined" style={{fontSize: '20px'}}>map</span>
                 <small className="ms-2">Map</small>
             </a>
